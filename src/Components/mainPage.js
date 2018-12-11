@@ -1,5 +1,6 @@
 import React from 'react'; 
+import Project from './project'
 
 export default function MainPage(){ 
-    return (<h1>Hello Portfolio World</h1>); 
+    return (<Project />); 
 }

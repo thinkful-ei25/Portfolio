@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import MainPage from './mainPage';
+import MainPage from './Components/mainPage';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<MainPage />, document.getElementById('root'));
