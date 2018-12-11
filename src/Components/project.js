@@ -1,10 +1,12 @@
 import React from 'react'; 
+import '../Styles/project.css'; 
 
 export default class Project extends React.Component{ 
 
-
     render(){
-        return (<h1>Hello Portfolio World</h1>)
+        return (
+            <section className="project">
+            </section>
+        ); 
     }
-
 }

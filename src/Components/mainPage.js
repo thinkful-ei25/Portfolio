@@ -1,6 +1,11 @@
 import React from 'react'; 
-import Project from './project'
+import Project from './project';
+import '../Styles/mainPage.css';
 
 export default function MainPage(){ 
-    return (<Project />); 
+    return (
+    <main className="mainPage">
+        <Project />
+    </main>
+    ); 
 }
