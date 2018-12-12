@@ -1,14 +1,40 @@
 .project{ 
-    background-color: white; 
+    border: 1px solid gold;  
+    background-color: grey; 
     margin-left: auto; 
     margin-right: auto; 
     width: 50%; 
     height: 50%;  
 }
 
-.youTube{ 
-    width: 100%;  
-    height: 45%; 
+.youTube{
+ 
+    margin-top: 2%;
+    margin-left: 2%; 
+    margin-right: 2%;  
+    width: 96%;  
+    height: 48%; 
+}
+
+.projectNav{
+    background-color: darkgray;
+    position: relative;
+    top: -10%;  
+    width: 40%; 
+    height: 20%; 
+}
+
+.projectNav:hover{ 
+    background-color: yellow; 
+}
+
+.left{ 
+    float: left; 
+    left: -18%; 
+}
+.right{ 
+    float: right;
+    right: -18%;  
 }
 
 @media only screen and (min-width: 360px){ 
