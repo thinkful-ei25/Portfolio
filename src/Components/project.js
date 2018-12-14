@@ -1,7 +1,7 @@
 import React from 'react'; 
 import createYouTube from 'react-youtube-component'; 
 import '../Styles/project.css'; 
-import videoRotate from '../Utils/videoURLContainer'; 
+import {videoRotateLeft, videoRotateRight} from '../Utils/videoURLContainer'; 
 
 const YouTube = createYouTube(); 
 
@@ -23,9 +23,13 @@ export default class Project extends React.Component{
         this.player = player;
       };
      
-      onClick = (event) => {
-        if (this.player) this.player.loadVideoById(videoRotate());
+      onLeftButtonClick = (event) => {
+        if (this.player) this.player.loadVideoById(videoRotateLeft());
       };
+
+      onRightButtonClick = (event) => { 
+        if (this.player) this.player.loadVideoById(videoRotateRight()); 
+      }
      
     render() {
         return (
@@ -39,8 +43,8 @@ export default class Project extends React.Component{
               onReady={this.onReady}
               onPlayer={this.onPlayer}
             />
-            <button className="projectNav left" onClick={this.onClick}>Previous Video</button>
-            <button className="projectNav right" onClick={this.onClick}>Next Video</button>
+            <button className="projectNav left" onClick={this.onRightButtonClick}>Previous Video</button>
+            <button className="projectNav right" onClick={this.onLeftButtonClick}>Next Video</button>
           </section>
         );
     }
