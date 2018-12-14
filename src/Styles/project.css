@@ -7,13 +7,22 @@
     height: 50%;  
 }
 
-.youTube{
+.video-stream{
     margin-top: 2%;
     margin-left: 2%; 
     margin-right: 2%;  
     width: 96%;  
     height: 48%; 
 }
+iframe{
+    margin-top: 2%;
+    margin-left: 2%; 
+    margin-right: 2%;  
+    width: 96%;  
+    height: 48%; 
+}
+
+
 
 .projectNav{
     background-color: darkgray;
