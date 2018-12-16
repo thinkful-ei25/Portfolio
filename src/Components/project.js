@@ -50,6 +50,7 @@ export default class Project extends React.Component{
             </input>
             <input 
               type="image" 
+              alt="right arrow"
               src="http://www.launchd.info/img/NSRightFacingTriangleTemplate.png"
               className="right projectNav"
               onClick={this.onRightButtonClick}>
