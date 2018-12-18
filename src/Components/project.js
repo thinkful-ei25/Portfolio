@@ -76,8 +76,7 @@ export default class Project extends React.Component{
               className="right projectNav"
               onClick={this.onRightButtonClick}>
             </input>
-            <h2>{this.state.projectTitle}</h2>
-            <p>{this.state.projectDescription}</p>
+            <p><b>{this.state.projectTitle}: </b>{this.state.projectDescription}</p>
           </section>
         );
     }
