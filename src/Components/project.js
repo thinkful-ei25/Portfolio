@@ -1,32 +1,22 @@
 import React from 'react'; 
 import createYouTube from 'react-youtube-component'; 
 import '../Styles/project.css'; 
-import {
-  videoIdRotateLeft, 
-  videoIdRotateRight, 
-  videoDescriptionRotateLeft, 
-  videoDescriptionRotateRight
-} from '../Utils/videoURLContainer'; 
+import {videoRotateLeft, videoRotateRight} from '../Utils/videoURLContainer'; 
 
 const YouTube = createYouTube(); 
 
 export default class Project extends React.Component{ 
     constructor(props) {
         super(props);
-
-        this.state = { 
-          playerVars : { 
-            autoplay: 0, 
-            color: 0, 
-            controls: 1
-          }, 
-          videoId : "LKS1qBV7ESQ", 
-          description : "Beat Fighter: A strategic music based mobile game. Where players craft beats and their beats come alive to fight eachother in realtime combat ", 
-        }
+        this.playerVars = {
+          autoplay: 0,
+          color: 0,
+          controls: 1
+        };
       }
      
       onReady = (event) => {
-        if (this.player) this.player.loadVideoById(this.state.videoId); 
+        if (this.player) this.player.loadVideoById("LKS1qBV7ESQ"); 
       };
      
       onPlayer = (player) => {
@@ -34,17 +24,11 @@ export default class Project extends React.Component{
       };
      
       onLeftButtonClick = (event) => {
-        if (this.player) { 
-          this.setState({videoId: videoIdRotateLeft(), description: videoDescriptionRotateLeft()}, 
-            () => this.player.loadVideoById(this.state.videoId));
-        }
+        if (this.player) this.player.loadVideoById(videoRotateLeft());
       };
 
       onRightButtonClick = (event) => { 
-        if (this.player) { 
-          this.setState({videoId: videoIdRotateRight(), description: videoDescriptionRotateRight()}, 
-            () => this.player.loadVideoById(this.state.videoId)); 
-        }
+        if (this.player) this.player.loadVideoById(videoRotateRight()); 
       }
      
     render() {
@@ -52,7 +36,7 @@ export default class Project extends React.Component{
           <section className="project">
             <YouTube
               videoId="h_D3VFfhvs4"
-              playerVars={this.state.playerVars}
+              playerVars={this.playerVars}
               onStateChange={this.onStateChange}
               onReady={this.onReady}
               onPlayer={this.onPlayer}
@@ -71,7 +55,6 @@ export default class Project extends React.Component{
               className="right projectNav"
               onClick={this.onRightButtonClick}>
             </input>
-            <p className="description">{this.state.description}</p>
           </section>
         );
     }

@@ -45,10 +45,6 @@ iframe{
     right: -22%; 
 }
 
-.description{ 
-    display: inline-block; 
-}
-
 @media only screen and (min-width: 360px){ 
     .project{ 
         width: 50%; 
