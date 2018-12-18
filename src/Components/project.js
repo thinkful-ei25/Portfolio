@@ -8,15 +8,20 @@ const YouTube = createYouTube();
 export default class Project extends React.Component{ 
     constructor(props) {
         super(props);
-        this.playerVars = {
-          autoplay: 0,
-          color: 0,
-          controls: 1
-        };
+        
+        this.state = {
+          playerVars : {
+            autoplay: 0,
+            color: 0,
+            controls: 1
+          }, 
+          id: "LKS1qBV7ESQ"
+        }
+        
       }
      
       onReady = (event) => {
-        if (this.player) this.player.loadVideoById("LKS1qBV7ESQ"); 
+        if (this.player) this.player.loadVideoById(this.state.id); 
       };
      
       onPlayer = (player) => {
@@ -24,11 +29,13 @@ export default class Project extends React.Component{
       };
      
       onLeftButtonClick = (event) => {
-        if (this.player) this.player.loadVideoById(videoRotateLeft());
+        this.setState({id : videoRotateLeft()}, 
+          () => this.player.loadVideoById(this.state.id)); 
       };
 
       onRightButtonClick = (event) => { 
-        if (this.player) this.player.loadVideoById(videoRotateRight()); 
+        this.setState({id: videoRotateRight()},  
+          () => this.player.loadVideoById(this.state.id)); 
       }
      
     render() {
@@ -36,7 +43,7 @@ export default class Project extends React.Component{
           <section className="project">
             <YouTube
               videoId="h_D3VFfhvs4"
-              playerVars={this.playerVars}
+              playerVars={this.state.playerVars}
               onStateChange={this.onStateChange}
               onReady={this.onReady}
               onPlayer={this.onPlayer}
