@@ -1,7 +1,13 @@
 import React from 'react'; 
 import createYouTube from 'react-youtube-component'; 
 import '../Styles/project.css'; 
-import {videoRotateLeft, videoRotateRight} from '../Utils/videoURLContainer'; 
+import {
+  videoIdRotateLeft, 
+  videoIdRotateRight, 
+  videoTitleRotateLeft, 
+  videoTitleRotateRight, 
+  videoDescriptionRotateLeft, 
+  videoDescriptionRotateRight} from '../Utils/videoURLContainer'; 
 
 const YouTube = createYouTube(); 
 
@@ -15,7 +21,9 @@ export default class Project extends React.Component{
             color: 0,
             controls: 1
           }, 
-          id: "LKS1qBV7ESQ"
+          id: "LKS1qBV7ESQ", 
+          projectTitle: "BeatFighter", 
+          projectDescription: "A game where players craft beats that come to life for competition"
         }
         
       }
@@ -29,13 +37,19 @@ export default class Project extends React.Component{
       };
      
       onLeftButtonClick = (event) => {
-        this.setState({id : videoRotateLeft()}, 
-          () => this.player.loadVideoById(this.state.id)); 
+        this.setState({
+          id : videoIdRotateLeft(), 
+          projectTitle : videoTitleRotateLeft(), 
+          projectDescription : videoDescriptionRotateLeft()}, 
+            () => this.player.loadVideoById(this.state.id)); 
       };
 
       onRightButtonClick = (event) => { 
-        this.setState({id: videoRotateRight()},  
-          () => this.player.loadVideoById(this.state.id)); 
+        this.setState({
+          id: videoIdRotateRight(), 
+          projectTitle: videoTitleRotateRight(),
+          projectDescription : videoDescriptionRotateRight()},  
+            () => this.player.loadVideoById(this.state.id)); 
       }
      
     render() {
@@ -62,6 +76,8 @@ export default class Project extends React.Component{
               className="right projectNav"
               onClick={this.onRightButtonClick}>
             </input>
+            <h2>{this.state.projectTitle}</h2>
+            <p>{this.state.projectDescription}</p>
           </section>
         );
     }
