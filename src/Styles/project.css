@@ -1,50 +1,60 @@
 .project{ 
+    display: flex; 
+    flex-flow: row wrap; 
     border: 1px solid gold;  
     background-color: grey; 
     margin-left: auto; 
     margin-right: auto; 
-    width: 50%; 
-    height: 50%;  
+    padding-top: 60%; 
+    width: 45%; 
+    justify-content: flex-end; 
 }
 
-.video-stream{
-    margin-top: 2%;
-    margin-left: 2%; 
-    margin-right: 2%;  
-    width: 96%;  
-    height: 48%; 
-}
+
 iframe{
-    margin-top: 2%;
-    margin-left: 2%; 
-    margin-right: 2%;  
-    width: 96%;  
-    height: 48%; 
+    position: absolute; 
+    align-self: flex-end; 
+    width: 43%; 
+    bottom: 47%; 
+    padding-left: 1%; 
+    padding-right: 1%;  
 }
 
-.projectNav{
+.button{
     background-color: darkgray;
-    position: relative;
-    top: -9%;  
-    width: 18%; 
-    height: 13%; 
     border: 1px solid gold; 
+    width: 18%; 
+    height: 18%; 
     padding: 2%; 
 }
 
-.projectNav:hover{ 
+.button:hover{ 
     background-color: yellow; 
 }
 
-.left{ 
-    float: left; 
-    left: -22%; 
-}
-.right{ 
-    float: right;
-    right: -22%; 
+.projectNav{ 
+    justify-content: space-between; 
+
 }
 
+.left{ 
+    /* align-self: flex-end;  */
+    /* align-content: flex-start;  */
+    /* float: left; 
+    left: -22%;  */
+}
+.right{ 
+    /* align-content: flex-end;  */
+    /* float: right;
+    right: -22%;  */
+}
+
+.top{ 
+    /* bottom: 280px; 
+    left: 18%;  */
+}
+
+/* 
 @media only screen and (min-width: 360px){ 
     .project{ 
         width: 50%; 
@@ -79,4 +89,4 @@ iframe{
         height: 75%; 
     }
 }
-
+ */
